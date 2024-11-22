@@ -1,0 +1,184 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #d4e8f2;
+}
+
+header {
+  padding: 10px;
+  text-align: center;
+  font-size: 20px;
+  color: black;
+  background-color: #90afc1;
+}
+
+h1 {
+  display: inline-block;
+  position: relative;
+}
+
+p {
+  overflow-wrap: break-word;
+}
+
+p#output {
+  text-align: right;
+  font-size: 0.6em;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: 30px;
+}
+
+.form-input,
+.posts,
+.search-bar {
+  width: 500px;
+  color: black;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+.posts h3 {
+  padding-bottom: 3px;
+}
+
+/* input boxes */
+.form-input input,
+.form-input textarea,
+.search-bar input {
+  border: 1px solid #000;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  width: 100%;
+  padding: 5px;
+  font-size: inherit;
+  resize: none;
+}
+
+.search-bar input {
+  margin-top: 0px;
+}
+
+.form-input h2,
+.posts h2,
+.search-bar h2 {
+  margin-bottom: 15px;
+}
+
+#search-results-label {
+  visibility: hidden;
+  margin-top: 10px;
+}
+
+.form-input button,
+.search-bar button {
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 5px 10px;
+  width: 65px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.form-input button:hover,
+.search-bar button:hover {
+  background-color: #d8d8d8;
+}
+
+.single-post {
+  padding: 10px;
+  margin: 10px 0;
+  background-color: white;
+  border: 1px solid;
+  border-radius: 5px;
+}
+
+.single-post::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* toggle switch */
+.switch {
+  position: absolute;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  top: 10px;
+  right: 10px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #11912d;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+button#clear {
+  position: absolute;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  top: 10px;
+  left: 10px;
+  border-radius: 34px;
+  background-color: #ccc;
+  border: none;
+  cursor: pointer;
+  opacity: 10%;
+}
+
+button#clear:hover {
+  opacity: 100%;
+}

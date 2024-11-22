@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cross-Site Scripting Demo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://ajax.googleapis.com"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <button id="clear" onclick="deletePosts()">Clear</button>
+        <h1>Cross-Site Scripting Demo</h1>
+        <label class="switch">
+            <input type="checkbox" id="toggle-btn" onclick="toggle()">
+            <span class="slider round"></span>
+        </label>
+        <p id="output">Switched Off: Vulnerable</p>
+    </header>
+    <div class="container">
+        <div class="form-input">
+            <h2>Make a post:</h2>
+            <form id="form-post">
+                <label for="title">Title:</label><br>
+                <input type="text" id="title" name="title" maxlength="45" required/><br/>
+                <label for="body">Body:</label><br>
+                <textarea rows="5" cols="50" id="body" name="body" maxlength="200" required></textarea><br/>
+                <button id="submit">Post</button>
+            </form>
+        </div>
+        <div class="posts">
+            <h2>View previous posts:</h2>
+            <div class="single-post">
+                <h3>Welcome</h3>
+                <p>This is a new message board post.</p>
+            </div>
+        </div>
+        <div class="search-bar">
+            <h2>Search:</h2>
+            <form id="form-search">
+                <input type="text" id="search" name="search" maxlength="200" required>
+                <button id="submit-search">Search</button>
+            </form>
+            <h4 id="search-results-label">results:</h4>
+            <div class="search-results"></div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
